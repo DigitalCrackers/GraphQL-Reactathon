@@ -1,16 +1,8 @@
-# apollo-tutorial-kit
-
-Starting point for the Apollo GraphQL Server tutorial.
-
-Follow along with the tutorial in the blog post: [How to build a GraphQL server](https://medium.com/apollo-stack/tutorial-building-a-graphql-server-cddaa023c035#.wy5h1htxs). If you want to skip ahead to the solution, check out the [server-tutorial-solution](https://github.com/apollographql/apollo-tutorial-kit/tree/server-tutorial-solution) branch of this repo.
-
-Up-to-date documentation and explanations can be found in the [Apollo Server docs](https://www.apollographql.com/docs/apollo-server/)
-
-## Getting started
+# JobSearch GraphQL
 
 ```bash
-git clone https://github.com/apollostack/apollo-starter-kit
-cd apollo-starter-kit
+git clone https://github.com/DigitalCrackers/GraphQL-Reactathon
+cd GraphQL-Reactathon
 npm install
 npm start
 ```
@@ -21,7 +13,13 @@ When you paste this on the left side of the page:
 
 ```graphql
 {
-  testString
+  allJobs{
+    JobTitle
+    JobDescription
+    SkillSet
+    Experience
+    Location
+  }
 }
 ```
 
@@ -30,7 +28,37 @@ and hit the play button (cmd-return), then you should get this on the right side
 ```json
 {
   "data": {
-    "testString": "It works!"
+    "allJobs": [
+      {
+        "JobTitle": "Analyst",
+        "JobDescription": "Just for testing",
+        "SkillSet": ".net",
+        "Experience": "5 -7",
+        "Location": "Chennai"
+      },
+      {
+        "JobTitle": "Sr. Analyst",
+        "JobDescription": "Just for testing",
+        "SkillSet": "React JS, MongoDB",
+        "Experience": "5 -7",
+        "Location": "Chennai"
+      },
+      {
+        "JobTitle": "Analyst",
+        "JobDescription": "Just for testing",
+        "SkillSet": "Java",
+        "Experience": "5 -7",
+        "Location": "Chennai"
+      },
+      {
+        "JobTitle": "Sr. Analyst",
+        "JobDescription": "Just for testing in Hyd",
+        "SkillSet": "Java",
+        "Experience": "5 -7",
+        "Location": "Hyderabad"
+      }
+    ]
   }
 }
 ```
+Note: Provided the MongoDb setup in local sytem. Otherwise change the mongodb URL in data/connectors.js file.
